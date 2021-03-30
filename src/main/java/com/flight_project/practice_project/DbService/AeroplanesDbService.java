@@ -25,6 +25,6 @@ public class AeroplanesDbService {
     }
 
     public void deleteAeroplane (final Aeroplanes aeroplane) {
-        repository.deleteById(aeroplane.getId());
+        repository.deleteById(aeroplane.getId()) ;
     }
 }
