@@ -17,7 +17,8 @@ public class AeroplanesMapper {
                 aeroplane.getFuelConsumption(),
                 aeroplane.getCapacityOfPassengers(),
                 aeroplane.getRunwayLength(),
-                aeroplane.getOwner());
+                aeroplane.getOwner()
+        );
     }
 
     public Aeroplanes mapToAeroplanes (final AeroplanesDto aeroplanesDto){
@@ -27,12 +28,14 @@ public class AeroplanesMapper {
                 aeroplanesDto.getFuelConsumption(),
                 aeroplanesDto.getCapacityOfPassengers(),
                 aeroplanesDto.getRunwayLength(),
-                aeroplanesDto.getOwner());
+                aeroplanesDto.getOwner()
+        );
     }
 
     public List<AeroplanesDto> mapToAeroplanesDtoList(final List<Aeroplanes> aeroplanesList) {
         return aeroplanesList.stream()
                 .map(this::mapToAeroplanesDto)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()
+                );
     }
 }
