@@ -1,10 +1,10 @@
 package com.flight_project.practice_project.controler;
 
 import com.flight_project.practice_project.DbService.AeroplanesDbService;
+import com.flight_project.practice_project.exceptions.AeroplaneNotExist;
 import com.flight_project.practice_project.mapper.AeroplanesMapper;
 import com.flight_project.practice_project.objects.Aeroplanes;
 import com.flight_project.practice_project.objects.dto.AeroplanesDto;
-import com.flight_project.practice_project.objects.exceptions.AeroplaneNotExist;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,7 @@
 package com.flight_project.practice_project.objects;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -8,10 +9,12 @@ import java.util.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @Entity
 public class Company {
 
     @Id
+    @GeneratedValue
     @Column(name = "Id", nullable = false, unique = true)
     private Long id;
 
