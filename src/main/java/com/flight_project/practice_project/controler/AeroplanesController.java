@@ -4,7 +4,7 @@ import com.flight_project.practice_project.DbService.AeroplanesDbService;
 import com.flight_project.practice_project.mapper.AeroplanesMapper;
 import com.flight_project.practice_project.objects.Aeroplanes;
 import com.flight_project.practice_project.objects.dto.AeroplanesDto;
-import com.flight_project.practice_project.objects.exceptions.AeroplaneException;
+import com.flight_project.practice_project.objects.exceptions.AeroplaneNotExist;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -26,9 +26,9 @@ public class AeroplanesController {
     }
 
     @GetMapping(value = "getAeroplane")
-    public AeroplanesDto getAeroplane(@RequestParam Long id) throws AeroplaneException {
+    public AeroplanesDto getAeroplane(@RequestParam Long id) throws AeroplaneNotExist {
         return mapper.mapToAeroplanesDto(
-                service.getAeroplane(id).orElseThrow(AeroplaneException::new)
+                service.getAeroplane(id).orElseThrow(AeroplaneNotExist::new)
         );
     }
 
@@ -44,7 +44,7 @@ public class AeroplanesController {
     }
 
     @DeleteMapping(value = "deleteAeroplane")
-    public AeroplanesDto deleteAeroplane(@RequestParam Long id) throws AeroplaneException {
+    public AeroplanesDto deleteAeroplane(@RequestParam Long id) throws AeroplaneNotExist {
         AeroplanesDto aeroplaneDto = getAeroplane(id);
         service.deleteAeroplane(id);
         return aeroplaneDto;
