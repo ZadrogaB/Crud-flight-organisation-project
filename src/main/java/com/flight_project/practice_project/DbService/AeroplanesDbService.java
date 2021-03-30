@@ -20,11 +20,11 @@ public class AeroplanesDbService {
         return repository.save(aeroplane);
     }
 
-    public Optional<Aeroplanes> getAeroplane (final Aeroplanes aeroplane) {
-        return repository.findById(aeroplane.getId());
+    public Optional<Aeroplanes> getAeroplane (final Long id) {
+        return repository.findById(id);
     }
 
-    public void deleteAeroplane (final Aeroplanes aeroplane) {
-        repository.deleteById(aeroplane.getId()) ;
+    public void deleteAeroplane (final Long id) {
+        repository.deleteById(id) ;
     }
 }
