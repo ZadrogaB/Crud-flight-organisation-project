@@ -27,4 +27,8 @@ public class AeroplanesDbService {
     public void deleteAeroplane (final Long id) {
         repository.deleteById(id) ;
     }
+
+   /* public Aeroplanes addOwner (final Long aeroplaneId, final Long companyId ){
+
+    }*/
 }

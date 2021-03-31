@@ -1,5 +1,8 @@
 package com.flight_project.practice_project.objects;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +11,7 @@ import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
+@Getter()
 @Entity(name = "Aeroplanes")
 public class Aeroplanes {
 
@@ -32,7 +35,14 @@ public class Aeroplanes {
     @Column(name = "Runway", nullable = false)
     private Long runwayLength;
 
+
+
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "AeroplaneOwner")
     private Company owner;
+
+    public void setOwner(Company company){
+        owner = company;
+    }
 }
